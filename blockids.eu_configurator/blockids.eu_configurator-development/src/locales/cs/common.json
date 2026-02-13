@@ -1,0 +1,5 @@
+{
+  "currency": "{{val, currency(currency: 'CZK')}}",
+  "loading": "Načítám...",
+  "404": "404 Neplatná URL"
+}

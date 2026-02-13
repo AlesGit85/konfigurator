@@ -1,0 +1,37 @@
+.root {
+    position: relative;
+}
+
+.value {
+    display: flex;
+    position: relative;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: .825rem;
+    color: #868686;
+
+    &:before {
+        content: '';
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: -15px;
+        width: 10px;
+        height: 1px;
+        background-color: #292929;
+    }
+
+    &:after {
+        content: attr(data-size) '\0000a0cm';
+        position: absolute;
+        top: -12px;
+        right: 0;
+        font-size: .625rem;
+        color: #292929;
+    }
+
+    &.zero {
+        height: 0;
+    }
+}

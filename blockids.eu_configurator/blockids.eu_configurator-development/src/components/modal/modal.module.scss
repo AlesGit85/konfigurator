@@ -1,0 +1,44 @@
+@import '../../styles/mixin';
+
+.root {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: rgba(41, 41, 41, 0.16);
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 696px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #00000029;
+}
+
+.content {
+    display: flex;
+    padding: 48px;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #292929;
+    text-align: center;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+
+    .button {
+        flex: 1;
+    }
+}

@@ -1,0 +1,12 @@
+.root {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    & > * {
+        font-size: 1rem !important;
+    }
+}

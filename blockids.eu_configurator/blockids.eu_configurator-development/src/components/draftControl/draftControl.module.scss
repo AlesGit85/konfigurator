@@ -1,0 +1,42 @@
+@import '../../styles/mixin';
+
+.root {
+    display: none;
+    min-width: 440px;
+    margin-top: -23px;
+    flex-direction: column;
+    gap: 20px;
+
+    @include devices(desktop) {
+        display: flex;
+    }
+}
+
+.title {
+
+}
+
+.list {
+
+}
+
+.action {
+    position: relative;
+}
+
+.button {
+    width: 100% !important;
+    padding: 17px 16px !important;
+}
+
+.helpControl {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    & > * {
+        font-size: 1rem !important;
+    }
+}

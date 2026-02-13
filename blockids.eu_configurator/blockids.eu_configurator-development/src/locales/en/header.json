@@ -1,0 +1,11 @@
+{
+  "appTitle": "My climbing wall",
+"add": "Add to the shopping cart",
+  "save": "Save design",
+  "new": "New design",
+"alertCreateTitle": "Warning",
+  "alertCreateDescription": "Your changes may not be saved. Are you sure you want to continue?",
+  "alertCreateActionSave": "Proceed and save changes",
+  "alertCreateActionCancel": "Cancel",
+  "alertCreateActionProceed": "Proceed"
+}

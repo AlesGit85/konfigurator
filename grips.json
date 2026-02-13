@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/WelcomeElement"
+  },
+  "definitions": {
+    "WelcomeElement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "order": {
+          "type": "integer"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "http"
+          ],
+          "qt-uri-extensions": [
+            ".png"
+          ]
+        },
+        "overlays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Overlay"
+          }
+        }
+      },
+      "required": [
+        "currency",
+        "id",
+        "image",
+        "order",
+        "overlays",
+        "price",
+        "title"
+      ],
+      "title": "WelcomeElement"
+    },
+    "Overlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "orientation": {
+          "$ref": "#/definitions/Orientation"
+        },
+        "rotation": {
+          "type": "integer"
+        },
+        "inputs": {
+          "type": "boolean"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "http"
+          ],
+          "qt-uri-extensions": [
+            ".png"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "image",
+        "inputs",
+        "orientation",
+        "rotation",
+        "type"
+      ],
+      "title": "Overlay"
+    },
+    "Orientation": {
+      "type": "string",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ],
+      "title": "Orientation"
+    },
+    "Type": {
+      "type": "string",
+      "enum": [
+        "rectangle",
+        "triangle_top",
+        "triangle_left"
+      ],
+      "title": "Type"
+    }
+  }
+}

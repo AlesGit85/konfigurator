@@ -1,0 +1,22 @@
+.root {
+    display: inline-flex;
+    padding: 1.125rem 1.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+    background-color: #292929;
+    border: 0.125rem solid rgb(41, 41, 41);
+    border-radius: 3.75rem;
+
+    &:hover {
+        color: #292929;
+        text-decoration: none;
+        background-color: #ffffff;
+        border-color: #292929;
+    }
+}
+
+.container {
+
+}

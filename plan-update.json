@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome",
+  "definitions": {
+    "Welcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "orientation": {
+          "type": "string"
+        },
+        "calculatedWidth": {
+          "type": "integer"
+        },
+        "calculatedHeight": {
+          "type": "integer"
+        },
+        "customWidth": {
+          "type": "integer"
+        },
+        "customHeight": {
+          "type": "integer"
+        },
+        "grip": {
+          "type": "integer"
+        },
+        "mattress": {
+          "type": "integer"
+        },
+        "mattressQuantity": {
+          "type": "integer"
+        },
+        "workspace": {
+          "$ref": "#/definitions/Workspace"
+        }
+      },
+      "required": [
+        "calculatedHeight",
+        "calculatedWidth",
+        "customHeight",
+        "customWidth",
+        "grip",
+        "mattress",
+        "mattressQuantity",
+        "orientation",
+        "workspace"
+      ],
+      "title": "Welcome"
+    },
+    "Workspace": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "A1": {
+          "$ref": "#/definitions/A1"
+        },
+        "B1": {
+          "$ref": "#/definitions/A1"
+        }
+      },
+      "required": [
+        "A1",
+        "B1"
+      ],
+      "title": "Workspace"
+    },
+    "A1": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "rotation": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "rotation"
+      ],
+      "title": "A1"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.root {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    &.default {
+        background-color: #B6E7EF;
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+        background-color: #EDEDED;
+    }
+
+    &.direction {
+        background-color: #f6d2e2;
+    }
+}

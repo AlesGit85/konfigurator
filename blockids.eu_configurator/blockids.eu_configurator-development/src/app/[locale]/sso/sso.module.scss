@@ -1,0 +1,18 @@
+.root {
+    position: initial;
+}
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.brand {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,22 @@
+{
+  "titleLabel": "Name of the design",
+  "titleChangeButton": "Change",
+  "titleSaveButton": "Save",
+  "titleCancelButton": "Cancel",
+  "untitledDefault": "Untitled",
+  "myWall": "My climbing wall BLOCKids",
+  "priceTotal": "My climbing wall BLOCKids",
+  "cartAdd": "Add to the shopping cart",
+  "deskRectangle": "Board rectangle",
+  "deskTriangle": "Board triangle",
+  "deskBlackboard": "Blackboard",
+  "holds": "Set of climbing holds",
+  "mattress": "Crash pad",
+  "extraDesign": "Additional charge for own design (10%)",
+  "extraSize": "Additional charge for own dimensions (10%)",
+ "gridSize": "wall dimensions {{axisX}} × {{axisY}} cm",
+  "alertTitle": "Accessories missing in the order",
+  "alertDescriptionGrips": "It looks like your order doesn’t include climbing holds. Are you sure you’d like to finish the order without them?",
+  "alertDescriptionMattress": "It looks like your order doesn’t include crash pads. Are you sure you’d like to finish the order without them?",
+  "alertDescriptionBoth": "It looks like your order doesn’t include climbing holds / crash pads. Are you sure you’d like to finish the order without them?"
+}

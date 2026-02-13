@@ -1,0 +1,9 @@
+{
+  "myAccountTitle": "Můj účet Design Konfigurátor",
+  "buttonChange": "Změnit",
+  "myDraftsTitle": "Moje návrhy",
+"tooltipEdit": "Editovat",
+  "tooltipCopy": "Kopírovat",
+  "tooltipDelete": "Smazat",
+  "tooltipLogout": "Odhlásit"
+}

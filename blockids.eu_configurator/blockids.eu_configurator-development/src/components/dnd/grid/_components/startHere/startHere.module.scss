@@ -1,0 +1,31 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.icon {
+    z-index: 998;
+    font-size: 20px;
+    cursor: pointer;
+
+    path {
+        fill: #292929;
+    }
+
+    &:hover {
+        path {
+            fill: #AC348C;
+        }
+    }
+}
+
+.text {
+    padding: 0 8px;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #292929;
+    text-align: center;
+}

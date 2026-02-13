@@ -1,0 +1,51 @@
+.root {
+    label {
+        display: flex;
+        font-size: .875rem;
+        font-weight: 600;
+        line-height: 24px;
+        cursor: pointer;
+        align-items: center;
+        gap: 8px;
+
+        .marker {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border: 1px solid #868686;
+            border-radius: 3px;
+
+            &.markerError {
+                box-shadow: inset 0 0 2px #E0001AFF, inset 0 0 2px #E0001AFF, inset 0 0 2px #E0001AFF;
+            }
+        }
+
+        input {
+            display: none;
+        }
+
+        input:checked ~ .marker {
+            border-color: #868686;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 16px;
+                height: 16px;
+                background-color: #27bbdb;
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMiAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNC4xNzIyOSA3LjY2Njg2TDEwLjk2NjIgMEwxMiAxLjE2NjU3TDQuMTcyMjkgMTBMMCA1LjI5MTY0TDEuMDMzNzUgNC4xMjUwN0w0LjE3MjI5IDcuNjY2ODZaIiBmaWxsPSJ3aGl0ZSIvPg0KPC9zdmc+DQo=");
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                border-radius: 2px;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &.disabled {
+        pointer-events: none;
+    }
+}

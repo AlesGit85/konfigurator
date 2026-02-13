@@ -1,0 +1,43 @@
+.root {
+    position: relative; /* making the .tooltip span a container for the tooltip text */
+
+    &:before {
+        content: attr(data-tooltip); /* here's the magic */
+
+        display: none; /* hide by default */
+        position: absolute;
+
+        /* vertically center */
+        top: 65%;
+        left: 50%;
+        z-index: 99999;
+
+        /* basic styles */
+        width: fit-content;
+        min-width: 20px;
+        padding: 6px 10px;
+        font-size: .75rem;
+        font-weight: 300;
+        color: #292929;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        background: #FFF;
+        border-radius: 2px;
+        box-shadow: 0 0 3px #00000029;
+    }
+
+    &:hover {
+        display: block;
+
+        &:before {
+            display: block;
+        }
+    }
+
+    &:active {
+        &:before {
+            display: none;
+        }
+    }
+}

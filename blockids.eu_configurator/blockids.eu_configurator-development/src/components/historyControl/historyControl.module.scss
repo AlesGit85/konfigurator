@@ -1,0 +1,47 @@
+$transitionTime: 200ms;
+
+@mixin rotationTransition {
+    -webkit-transition: -webkit-transform $transitionTime ease-out;
+    -moz-transition:    -moz-transform $transitionTime ease-out;
+    -o-transition:      -o-transform $transitionTime ease-out;
+    -ms-transition:     -ms-transform $transitionTime ease-out;
+    transition:         transform $transitionTime ease-out;
+}
+
+.root {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    padding: 8px 14px;
+
+    &.icon {
+        display: flex;
+        position: relative !important;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.undo {
+        &:hover {
+            svg {
+                @include rotationTransition;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    &.redo {
+        &:hover {
+            svg {
+                @include rotationTransition;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

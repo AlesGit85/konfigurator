@@ -1,0 +1,42 @@
+.root {
+    display: flex;
+    padding: 0 16px 0 24px;
+    border-color: #292929;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    flex-wrap: wrap;
+    //grid-template-columns: repeat(8, 1fr);
+    //grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    bottom: -5px;
+    left: 40%;
+    z-index: 999999;
+    width: fit-content;
+    min-width: 20px;
+    padding: 6px 10px;
+    font-size: .75rem;
+    font-weight: 300;
+    color: #292929;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    box-shadow: 0 0 3px #00000029;
+}
+
+
+.item {
+    position: relative;
+
+    &:hover {
+        .tooltip {
+            display: flex;
+        }
+    }
+}

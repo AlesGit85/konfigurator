@@ -1,0 +1,10 @@
+{
+  "createNewDraftSuccess": "New design successfully created. We'll redirect you right away...",
+  "createNewDraftError": "Something went wrong.",
+  "saveDraftSuccess": "Design was successfully saved.",
+  "saveDraftError": "We were unable to save the design.",
+  "confirmDraftSuccess": "The design has been successfully added to the shopping cart, we will redirect you back to the shop in a moment...",
+  "confirmDraftError": "We were unable to add the design to the shopping cart.",
+  "minMaxAllowedWidth": "Dimensions allowed for axis X are {{min}} cm and {{max}} cm",
+  "minMaxAllowedHeight": "Allowed dimensions for axis Y are {{min}} cm and {{max}} cm"
+}

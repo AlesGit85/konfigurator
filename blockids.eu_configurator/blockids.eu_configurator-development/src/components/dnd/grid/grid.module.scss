@@ -1,0 +1,65 @@
+.root {
+    display: grid;
+    position: relative;
+    width: auto;
+    height: auto;
+
+    &.vertical {
+        .container {
+            grid-template-columns: repeat(8, 132px);
+            grid-template-rows: repeat(3, 198px);
+        }
+    }
+
+    &.horizontal {
+        .container {
+            grid-template-columns: repeat(5, 198px);
+            grid-template-rows: repeat(4, 132px);
+        }
+    }
+}
+
+.container {
+    display: grid;
+    gap: 1px;
+    direction:rtl;
+}
+
+.item {
+    &.hidden {
+        & > div {
+            display: none;
+        }
+    }
+}
+
+.axisX,
+.axisY {
+    font-size: .875rem;
+    color: #868686;
+}
+
+.axisX {
+    display: flex;
+    position: absolute!important;
+    top: -30px;
+    left: 0;
+    width: 100%;
+}
+
+.axisY {
+    display: flex;
+    position: absolute !important;
+    justify-content: space-around;
+    top: 0;
+    bottom: 30px;
+    left: -24px;
+    flex-direction: column;
+}
+
+.mattress {
+    display: flex;
+    align-items: flex-end;
+    height: 30px;
+    background-color: #EDEDED;
+}

@@ -1,0 +1,16 @@
+{
+  "orientation": "Orientace desek na ploše",
+  "standardSizes": "Standardní rozměry",
+  "individualSizes": "Individuální rozměr stěny",
+  "guide": "Návod",
+  "hints": "Inspirace",
+  "width": "výška",
+  "height": "šířka",
+  "axisX": "osa X",
+  "axisY": "osa Y",
+"alertTitle": "Upozornění",
+  "alertDescription": "Opravdu chcete provést změnu rozložení? Po změně rozložení dojde k odstranění aktuálního rozložení.",
+  "undo": "Zpět",
+  "redo": "Znovu",
+  "tooltipHelp": "Nápověda"
+}

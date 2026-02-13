@@ -1,0 +1,17 @@
+.main {
+    position: relative;
+    flex: 1;
+}
+
+.settings {
+    position: relative;
+}
+
+.content {
+    display: flex;
+    padding: 5rem;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}

@@ -1,0 +1,147 @@
+.root {
+    align-items: center;
+    justify-content: center;
+
+    &.primary {
+        display: inline-flex;
+        position: relative;
+        width: auto;
+        padding: .125rem .75rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #ffffff;
+        white-space: nowrap;
+        cursor: pointer;
+        background-color: #292929;
+        border: 0.125rem solid #292929;
+        border-radius: 3.75rem;
+        gap: 8px;
+
+        &:hover {
+            color: #292929;
+            text-decoration: none;
+            background-color: #ffffff;
+            border-color: #292929;
+        }
+
+        &.loading {
+            pointer-events: none;
+            cursor: initial;
+
+            .spinner {
+                background-color: #fff;
+                border-radius: 3.75rem;
+
+                svg path {
+                    fill: #000 !important;
+                }
+            }
+        }
+
+        &.disabled {
+            &:hover {
+                color: #ffffff;
+                background-color: #292929;
+
+                svg path {
+                    fill: #ffffff !important;
+                }
+            }
+        }
+    }
+
+    &.secondary {
+        all: unset;
+        display: inline-flex;
+        position: relative;
+        width: auto;
+        font-size: .875rem;
+        font-weight: 600;
+        color: #000;
+        white-space: nowrap;
+        cursor: pointer;
+        gap: 8px;
+
+        &:hover {
+            color: #AC348C;
+            text-decoration: underline;
+
+            svg path {
+                fill: #AC348C;
+            }
+        }
+
+        &:focus-visible {
+            color: #AC348C;
+            text-decoration: underline;
+
+            svg {
+                path {
+                    fill: #AC348C;
+                }
+            }
+        }
+
+        &.disabled {
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+
+    &.disabled {
+        pointer-events: none;
+        cursor: initial !important;
+        opacity: 0.6;
+    }
+
+    &.tertiary {
+        all: unset;
+        padding: 5px;
+        background-color: #ededed;
+        border-radius: 3px;
+        box-shadow: 0 0 2px #00000029;
+
+        &:hover {
+            color: #FFF;
+            text-decoration: underline;
+            background-color: #27bbdb;
+
+            svg path {
+                fill: #FFF;
+            }
+        }
+    }
+
+    &.transparent {
+        font-size: 24px !important;
+        cursor: pointer !important;
+        all: unset;
+
+        &:hover {
+            background-color: #EDEDED !important;
+        }
+
+        svg path {
+            fill: #000000 !important;
+        }
+
+        &.disabled {
+            cursor: initial !important;
+
+            svg {
+                opacity: .5;
+            }
+
+            &:hover {
+                background-color: initial !important;
+            }
+        }
+    }
+}
+
+.toast {
+    position: absolute !important;
+    top: 30px !important;
+    transform: translateX(-75%) !important;
+}
