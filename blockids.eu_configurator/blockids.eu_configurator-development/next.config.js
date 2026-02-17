@@ -29,6 +29,12 @@ module.exports = {
                 port: '',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'blockids.creaticom.cz',
+                port: '',
+                pathname: '/**',
+            },
         ],
     },
     serverRuntimeConfig: {
