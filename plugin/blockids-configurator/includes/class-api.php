@@ -107,6 +107,9 @@ class BLOCKids_Configurator_API
             'callback' => array(__CLASS__, 'change_plan_title'),
             'permission_callback' => '__return_true'
         ));
+
+        // ===== REGISTRACE =====
+        BLOCKids_Configurator_Registration::register_routes();
     }
 
     // =========================================================================
@@ -357,7 +360,7 @@ class BLOCKids_Configurator_API
 
         // Načíst FAQ z custom post type nebo z options
         $faq_items = get_option('blockids_faq_items', array());
-        
+
         if (!empty($faq_items) && is_string($faq_items)) {
             $faq_items = json_decode($faq_items, true);
         }
