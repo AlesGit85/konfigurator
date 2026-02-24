@@ -174,49 +174,68 @@ class BLOCKids_Configurator_API
      * Konfigurátor čeká:
      * [{ id, title, price, currency, order, image, overlays: [{ id, type, orientation, rotation, inputs, image }] }]
      * 
-     * Product meta:
-     * - _blockids_overlays: JSON pole overlay objektů
+     * VERZE: 2.1.0 - overlay image se vrací jako base64 data URI místo URL
+     * (Next.js <Image> blokuje SVG z externích URL bez dangerouslyAllowSVG)
      */
     public static function get_grips($request)
     {
         $lang = $request['lang'];
 
         $args = array(
-            'post_type' => 'product',
+            'post_type'      => 'product',
             'posts_per_page' => -1,
-            'tax_query' => array(
+            'tax_query'      => array(
                 array(
                     'taxonomy' => 'product_cat',
-                    'field' => 'slug',
-                    'terms' => 'gripy'
-                )
+                    'field'    => 'slug',
+                    'terms'    => 'gripy',
+                ),
             ),
             'orderby' => 'menu_order',
-            'order' => 'ASC'
+            'order'   => 'ASC',
         );
 
         $products = wc_get_products($args);
-        $grips = array();
+        $grips    = array();
 
         foreach ($products as $product) {
-            // Overlays z product meta (JSON)
+
+            // Overlays z product meta - SVG image převést na base64 data URI
             $overlays_raw = get_post_meta($product->get_id(), '_blockids_overlays', true);
-            $overlays = array();
+            $overlays     = array();
             if ($overlays_raw) {
                 $decoded = json_decode($overlays_raw, true);
                 if (is_array($decoded)) {
-                    $overlays = $decoded;
+                    foreach ($decoded as $overlay) {
+                        // Převést SVG URL → base64 data URI
+                        // Next.js <Image> blokuje SVG z externích URL bez zásahu do konfiguratoru
+                        if (!empty($overlay['image'])) {
+                            $overlay['image'] = self::svg_to_data_uri($overlay['image']);
+                        }
+
+                        // DŮLEŽITÉ: konfigurátor filtruje overlay podle: hold.type === desk.type
+                        // Prázdný type → filtr selže → overlay se nikdy nezobraží na desce!
+                        // Default: 'rectangle' (matchuje s většinou desek)
+                        if (empty($overlay['type'])) {
+                            $overlay['type'] = 'rectangle';
+                        }
+
+                        // rotation musí být číslo (konfigurátor porovnává: hold.rotation === rotation)
+                        $overlay['rotation'] = isset($overlay['rotation']) ? (int) $overlay['rotation'] : 0;
+
+                        $overlays[] = $overlay;
+                    }
                 }
             }
 
             $grips[] = array(
-                'id' => $product->get_id(),
-                'title' => $product->get_name(),
-                'price' => (int) $product->get_price(),
+                'id'       => $product->get_id(),
+                'title'    => $product->get_name(),
+                'price'    => (int) $product->get_price(),
                 'currency' => 'czk',
-                'order' => $product->get_menu_order(),
-                'image' => wp_get_attachment_url($product->get_image_id()) ?: '',
-                'overlays' => $overlays
+                'order'    => $product->get_menu_order(),
+                'image'    => wp_get_attachment_url($product->get_image_id()) ?: '',
+                'overlays' => $overlays,
             );
         }
 
@@ -600,5 +619,68 @@ class BLOCKids_Configurator_API
             'success' => true,
             'accessHash' => $hash
         ));
+    }
+
+    /**
+     * Převést SVG soubor z media library na base64 data URI
+     * 
+     * Next.js <Image> komponenta blokuje SVG z externích URL bez
+     * dangerouslyAllowSVG v next.config.js. Data URI funguje bez
+     * jakéhokoliv zásahu do konfiguratoru.
+     * 
+     * @param  string $url  URL souboru v WordPress media library
+     * @return string       data:image/svg+xml;base64,... nebo původní URL pokud selže
+     */
+    private static function svg_to_data_uri($url)
+    {
+        if (empty($url)) {
+            return '';
+        }
+
+        // Zjistit fyzickou cestu k souboru z URL
+        $upload_dir       = wp_upload_dir();
+        $upload_base_url  = $upload_dir['baseurl'];
+        $upload_base_path = $upload_dir['basedir'];
+
+        if (strpos($url, $upload_base_url) === 0) {
+            // Standardní upload URL → převést na cestu
+            $file_path = str_replace($upload_base_url, $upload_base_path, $url);
+        } else {
+            // Fallback: zkusit přes home URL
+            $home_url  = home_url();
+            $home_path = ABSPATH;
+            if (strpos($url, $home_url) === 0) {
+                $file_path = str_replace($home_url, rtrim($home_path, '/'), $url);
+            } else {
+                // Nedokážeme určit cestu → vrátit původní URL
+                return $url;
+            }
+        }
+
+        // Bezpečnostní kontrola — soubor musí být uvnitř upload složky
+        $real_path = realpath($file_path);
+        $real_base = realpath($upload_base_path);
+        if (!$real_path || !$real_base || strpos($real_path, $real_base) !== 0) {
+            return $url;
+        }
+
+        // Zpracovat jen SVG soubory (PNG/JPG vrátit jako URL - ty fungují normálně)
+        $extension = strtolower(pathinfo($real_path, PATHINFO_EXTENSION));
+        if ($extension !== 'svg' && $extension !== 'svgz') {
+            return $url;
+        }
+
+        // Ochrana před příliš velkými soubory (limit 512 KB)
+        if (filesize($real_path) > 524288) {
+            return $url;
+        }
+
+        // Načíst a zakódovat
+        $content = @file_get_contents($real_path);
+        if ($content === false) {
+            return $url;
+        }
+
+        return 'data:image/svg+xml;base64,' . base64_encode($content);
     }
 }

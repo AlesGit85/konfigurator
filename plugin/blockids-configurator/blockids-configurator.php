@@ -4,7 +4,7 @@
  * Plugin Name: BLOCKids Konfigurátor Integration
  * Plugin URI: https://blockids.eu
  * Description: Integrace konfiguratoru lezeckých stěn s WooCommerce eshopem
- * Version: 2.1.7
+ * Version: 2.3.1
  * Author: Aleš
  * Author URI: https://blockids.eu
  * Text Domain: blockids-configurator
@@ -30,6 +30,53 @@ define('BLOCKIDS_CONFIGURATOR_VERSION', '2.1.0');
 define('BLOCKIDS_CONFIGURATOR_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('BLOCKIDS_CONFIGURATOR_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('BLOCKIDS_CONFIGURATOR_PLUGIN_BASENAME', plugin_basename(__FILE__));
+
+/**
+ * Povolí nahrávání SVG souborů do WordPress media library.
+ * Nutné pro overlay obrázky chytů v konfiguratoru.
+ */
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg']  = 'image/svg+xml';
+    $mimes['svgz'] = 'image/svg+xml';
+    return $mimes;
+});
+
+/**
+ * Opravit MIME detekci SVG (WordPress ji někdy špatně vyhodnotí)
+ */
+add_filter('wp_check_filetype_and_ext', function ($data, $file, $filename, $mimes) {
+    if (empty($data['ext'])) {
+        $check = wp_check_filetype($filename, $mimes);
+        if ('svg' === $check['ext']) {
+            $data['ext']  = 'svg';
+            $data['type'] = 'image/svg+xml';
+        }
+    }
+    return $data;
+}, 10, 4);
+
+/**
+ * Zobrazit SVG náhled v media library
+ * (WordPress standardně nezobrazuje SVG náhled)
+ */
+add_filter('wp_prepare_attachment_for_js', function ($response, $attachment) {
+    if ('image/svg+xml' === $response['mime']) {
+        if (empty($response['sizes'])) {
+            $response['sizes'] = array(
+                'full' => array(
+                    'url'         => $response['url'],
+                    'width'       => isset($response['width'])  ? $response['width']  : 200,
+                    'height'      => isset($response['height']) ? $response['height'] : 200,
+                    'orientation' => 'landscape',
+                ),
+            );
+        }
+        if (empty($response['icon'])) {
+            $response['icon'] = $response['url'];
+        }
+    }
+    return $response;
+}, 10, 2);
 
 class BLOCKids_Configurator
 {
