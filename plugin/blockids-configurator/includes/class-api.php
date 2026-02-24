@@ -338,7 +338,7 @@ class BLOCKids_Configurator_API
         $desks = array();
 
         foreach ($products as $product) {
-            $location = get_post_meta($product->get_id(), '_blockids_location', true) ?: 'indoor';
+            $location = get_post_meta($product->get_id(), '_blockids_location', true);
             $type = get_post_meta($product->get_id(), '_blockids_type', true) ?: 'rectangle';
 
             $overlays_raw = get_post_meta($product->get_id(), '_blockids_overlays', true);
@@ -350,17 +350,24 @@ class BLOCKids_Configurator_API
                 }
             }
 
-            $desks[] = array(
-                'id' => $product->get_id(),
-                'title' => $product->get_name(),
-                'price' => (int) $product->get_price(),
+            $desk_base = array(
+                'id'       => $product->get_id(),
+                'title'    => $product->get_name(),
+                'price'    => (int) $product->get_price(),
                 'currency' => 'czk',
-                'order' => $product->get_menu_order(),
-                'image' => wp_get_attachment_url($product->get_image_id()) ?: '',
-                'location' => $location,
-                'type' => $type,
-                'overlays' => $overlays
+                'order'    => $product->get_menu_order(),
+                'image'    => wp_get_attachment_url($product->get_image_id()) ?: '',
+                'type'     => $type,
+                'overlays' => $overlays,
             );
+
+            if ($location === '' || $location === null || $location === false) {
+                // Obě umístění – přidáme desku dvakrát
+                $desks[] = array_merge($desk_base, array('location' => 'indoor'));
+                $desks[] = array_merge($desk_base, array('location' => 'outdoor'));
+            } else {
+                $desks[] = array_merge($desk_base, array('location' => $location));
+            }
         }
 
         return rest_ensure_response($desks);

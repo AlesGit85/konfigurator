@@ -4,7 +4,7 @@
  * Plugin Name: BLOCKids Konfigurátor Integration
  * Plugin URI: https://blockids.eu
  * Description: Integrace konfiguratoru lezeckých stěn s WooCommerce eshopem
- * Version: 2.3.1
+ * Version: 2.3.2
  * Author: Aleš
  * Author URI: https://blockids.eu
  * Text Domain: blockids-configurator
