@@ -1,0 +1,52 @@
+.root {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: stretch;
+
+    &:hover {
+        background-color: #b6e7ef;
+    }
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    max-height: 173px;
+
+    .img {
+        width: 173px;
+        height: 260px;
+        margin-top: -43px;
+        margin-left: 43px;
+        transform: rotate(90deg);
+    }
+
+    &.greyish {
+        filter: grayscale(1);
+    }
+}
+
+.content {
+    display: flex;
+    color: #292929;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+
+    .title {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .description {
+        font-size: .875rem;
+    }
+}
+
+.control {
+    .button {
+        font-size: 1rem;
+    }
+}

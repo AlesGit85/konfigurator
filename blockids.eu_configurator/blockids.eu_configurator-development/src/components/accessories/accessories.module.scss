@@ -1,0 +1,67 @@
+.root {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.content {
+    display: flex;
+    padding-left: 24px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox {
+    font-size: .875rem !important;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .icon {
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+        min-height: 48px;
+        padding: 8px;
+        overflow: visible;
+        cursor: pointer;
+        background: #FFF;
+        border: 3px solid #FFF;
+        border-radius: 4px;
+
+        .image {
+            width: 100%;
+            height: 100%;
+        }
+
+        &.selected {
+            padding: 9px;
+            border: 2px solid #26BADA;
+            -webkit-box-shadow: 0 0 0 1px rgb(255, 255, 255) inset;
+            -moz-box-shadow: 0 0 0 1px rgb(255, 255, 255) inset;
+            box-shadow: 0 0 0 1px rgb(255, 255, 255) inset;
+        }
+    }
+}
+
+.description {
+    font-size: .75rem;
+    line-height: 1rem;
+}
+
+.tooltip {
+    &:before {
+        right: 0 !important;
+        left: unset !important;
+    }
+}

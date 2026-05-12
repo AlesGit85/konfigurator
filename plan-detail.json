@@ -1,0 +1,281 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome",
+  "definitions": {
+    "Welcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "accessHash": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/Location"
+        },
+        "orientation": {
+          "$ref": "#/definitions/Orientation"
+        },
+        "calculatedWidth": {
+          "type": "integer"
+        },
+        "calculatedHeight": {
+          "type": "integer"
+        },
+        "customWidth": {
+          "type": "integer"
+        },
+        "customHeight": {
+          "type": "integer"
+        },
+        "workspace": {
+          "$ref": "#/definitions/Workspace"
+        },
+        "grip": {
+          "$ref": "#/definitions/Grip"
+        },
+        "gripQuantity": {
+          "type": "integer"
+        },
+        "mattress": {
+          "type": "null"
+        },
+        "mattressQuantity": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "accessHash",
+        "calculatedHeight",
+        "calculatedWidth",
+        "customHeight",
+        "customWidth",
+        "grip",
+        "gripQuantity",
+        "id",
+        "location",
+        "mattress",
+        "mattressQuantity",
+        "orientation",
+        "status",
+        "title",
+        "workspace"
+      ],
+      "title": "Welcome"
+    },
+    "Grip": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "currency": {
+          "$ref": "#/definitions/Currency"
+        },
+        "order": {
+          "type": "integer"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "http"
+          ],
+          "qt-uri-extensions": [
+            ".png"
+          ]
+        },
+        "overlays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Overlay"
+          }
+        },
+        "location": {
+          "$ref": "#/definitions/Location"
+        },
+        "type": {
+          "$ref": "#/definitions/GripType"
+        }
+      },
+      "required": [
+        "currency",
+        "id",
+        "image",
+        "order",
+        "price",
+        "title"
+      ],
+      "title": "Grip"
+    },
+    "Overlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "type": {
+          "$ref": "#/definitions/OverlayType"
+        },
+        "orientation": {
+          "$ref": "#/definitions/Orientation"
+        },
+        "rotation": {
+          "type": "integer"
+        },
+        "inputs": {
+          "type": "boolean"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "http"
+          ],
+          "qt-uri-extensions": [
+            ".png"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "image",
+        "inputs",
+        "orientation",
+        "rotation",
+        "type"
+      ],
+      "title": "Overlay"
+    },
+    "Workspace": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "A1": {
+          "$ref": "#/definitions/A1"
+        },
+        "B1": {
+          "$ref": "#/definitions/A1"
+        },
+        "C1": {
+          "$ref": "#/definitions/A1"
+        },
+        "D1": {
+          "$ref": "#/definitions/A1"
+        },
+        "E1": {
+          "$ref": "#/definitions/A1"
+        },
+        "F1": {
+          "$ref": "#/definitions/A1"
+        },
+        "A2": {
+          "$ref": "#/definitions/A1"
+        },
+        "B2": {
+          "$ref": "#/definitions/A1"
+        },
+        "C2": {
+          "$ref": "#/definitions/A1"
+        },
+        "D2": {
+          "$ref": "#/definitions/A1"
+        },
+        "E2": {
+          "$ref": "#/definitions/A1"
+        },
+        "F2": {
+          "$ref": "#/definitions/A1"
+        }
+      },
+      "required": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2",
+        "D1",
+        "D2",
+        "E1",
+        "E2",
+        "F1",
+        "F2"
+      ],
+      "title": "Workspace"
+    },
+    "A1": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "desk": {
+          "$ref": "#/definitions/Grip"
+        },
+        "rotation": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "desk",
+        "rotation"
+      ],
+      "title": "A1"
+    },
+    "Currency": {
+      "type": "string",
+      "enum": [
+        "czk"
+      ],
+      "title": "Currency"
+    },
+    "Location": {
+      "type": "string",
+      "enum": [
+        "outdoor"
+      ],
+      "title": "Location"
+    },
+    "Orientation": {
+      "type": "string",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ],
+      "title": "Orientation"
+    },
+    "OverlayType": {
+      "type": "string",
+      "enum": [
+        "rectangle",
+        "triangle_top",
+        "triangle_left"
+      ],
+      "title": "OverlayType"
+    },
+    "GripType": {
+      "type": "string",
+      "enum": [
+        "rectangle",
+        "table",
+        "triangle_left"
+      ],
+      "title": "GripType"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"type": "array",
+	"items": {
+		"$ref": "#/definitions/WelcomeElement"
+	},
+	"definitions": {
+		"WelcomeElement": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"order": {
+					"type": "integer"
+				},
+				"image": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"http"
+					],
+					"qt-uri-extensions": [
+						".png"
+					]
+				}
+			},
+			"required": [
+				"id",
+				"image",
+				"order"
+			],
+			"title": "WelcomeElement"
+		}
+	}
+}

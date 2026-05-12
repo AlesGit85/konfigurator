@@ -1,0 +1,22 @@
+{
+  "titleLabel": "Designbezeichnung",
+  "titleChangeButton": "Ändern",
+  "titleSaveButton": "Speichern",
+  "titleCancelButton": "Abbrechen",
+  "untitledDefault": "Ohne Bezeichnung",
+  "myWall": "Meine BLOCKids-Kletterwand",
+  "priceTotal": "Meine BLOCKids-Kletterwand",
+  "cartAdd": "In den Einkaufswagen legen",
+  "deskRectangle": "Platte Rechteck",
+  "deskTriangle": "Platte Dreieck",
+  "deskBlackboard": "Tafel",
+  "holds": "Satz Klettergriffe",
+  "mattress": "Sturzmatte",
+  "extraDesign": "Aufpreis für individuelles Design (10%)",
+  "extraSize": "Aufpreis für individuelle Abmessungen (10%)",
+ "gridSize": "Wandmaß {{axisX}} × {{axisY}} cm",
+  "alertTitle": "Fehlendes Zubehör in der Bestellung",
+  "alertDescriptionGrips": "In eurer Bestellung sind keine Klettergriffe enthalten. Möchtet ihr die Bestellung wirklich abschließen?",
+  "alertDescriptionMattress": "In eurer Bestellung sind keine Sturzmatten enthalten. Möchtet ihr die Bestellung wirklich abschließen?",
+  "alertDescriptionBoth": "In eurer Bestellung sind keine Klettergriffe/Sturzmatten enthalten. Möchtet ihr die Bestellung wirklich abschließen?"
+}

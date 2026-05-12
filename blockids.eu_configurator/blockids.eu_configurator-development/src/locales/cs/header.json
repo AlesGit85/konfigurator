@@ -1,0 +1,11 @@
+{
+  "appTitle": "Moje lezecká stěna",
+"add": "Přidat do košíku",
+  "save": "Uložit návrh",
+  "new": "Nový návrh",
+"alertCreateTitle": "Upozornění",
+  "alertCreateDescription": "Vaše změny nemusí být uloženy, opravdu si přejete pokračovat?",
+  "alertCreateActionSave": "Přejít a uložit změny",
+  "alertCreateActionCancel": "Zpět",
+  "alertCreateActionProceed": "Přejít"
+}

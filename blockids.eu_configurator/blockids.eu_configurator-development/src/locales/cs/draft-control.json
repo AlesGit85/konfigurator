@@ -1,0 +1,22 @@
+{
+  "titleLabel": "Název návrhu",
+  "titleChangeButton": "Změnit",
+  "titleSaveButton": "Uložit",
+  "titleCancelButton": "Zrušit",
+  "untitledDefault": "Bez názvu",
+  "myWall": "Moje BLOCKids lezecká stěna",
+  "priceTotal": "Moje BLOCKids lezecká stěna",
+  "cartAdd": "Přidat do nákupního košíku",
+  "deskRectangle": "Deska obdélník",
+  "deskTriangle": "Deska trojúhelník",
+  "deskBlackboard": "Kreslící tabule",
+  "holds": "Sada lezeckých chytů",
+  "mattress": "Dopadová matrace",
+  "extraDesign": "Příplatek za vlastní design (10%)",
+  "extraSize": "Příplatek za vlastní rozměr (10 %)",
+ "gridSize": "rozměr stěny {{axisX}} × {{axisY}} cm",
+  "alertTitle": "Chybějící příslušenství v objednávce",
+  "alertDescriptionGrips": "Vaše objednávka neobsahuje lezecké chyty. Opravdu si přejete objednávku dokončit?",
+  "alertDescriptionMattress": "Vaše objednávka neobsahuje dopadové bezpečnostní matrace. Opravdu si přejete objednávku dokončit?",
+  "alertDescriptionBoth": "Vaše objednávka neobsahuje lezecké chyty / dopadové bezpečnostní matrace. Opravdu si přejete objednávku dokončit?"
+}

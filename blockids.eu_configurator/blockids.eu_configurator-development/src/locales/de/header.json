@@ -1,0 +1,11 @@
+{
+  "appTitle": "Meine Kletterwand",
+"add": "In den Einkaufswagen",
+  "save": "Design speichern",
+  "new": "Neues Design",
+"alertCreateTitle": "Warnung",
+  "alertCreateDescription": "Eure Änderungen werden möglicherweise nicht gespeichert. Möchtet ihr wirklich fortfahren?",
+  "alertCreateActionSave": "Fortfahren und Änderungen speichern",
+  "alertCreateActionCancel": "Zurück",
+  "alertCreateActionProceed": "Weiter"
+}

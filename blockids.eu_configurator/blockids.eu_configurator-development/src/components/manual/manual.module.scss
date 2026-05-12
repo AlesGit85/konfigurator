@@ -1,0 +1,60 @@
+.root {
+    position: relative;
+}
+
+.section {
+    position: relative;
+    padding: 16px 0;
+}
+
+.title {
+    padding-bottom: 16px;
+    font-size: 1.250rem;
+    font-weight: 600;
+    border-bottom: 1px solid #868686;
+}
+
+.content {
+    padding: 20px 0 10px 0;
+}
+
+.description {
+    font-size: .875rem;
+    font-weight: 400;
+}
+
+.contact {
+    .contactTitle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: .875rem;
+        color: #AC348C;
+    }
+
+    .contactDescription {
+        padding-left: 42px;
+        font-size: .875rem;
+        font-weight: 300;
+        color: #292929;
+    }
+}
+
+.icon {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    background-color: #AC348C;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        font-size: 20px;
+    }
+}
+
+.faq {
+    position: relative;
+    margin: 20px 0;
+}

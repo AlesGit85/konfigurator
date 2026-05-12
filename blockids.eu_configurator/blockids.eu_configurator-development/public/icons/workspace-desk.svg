@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.7.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Vrstva_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 140 210" style="enable-background:new 0 0 140 210;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#EDDAC3;}
+	.st2{fill:#868686;}
+</style>
+<polygon class="st0" points="0,0 0,210 140,0 "/>
+<polygon class="st1" points="0,210 140,210 140,0 "/>
+<g>
+	<circle class="st2" cx="5.9" cy="5.9" r="1.1"/>
+	<circle class="st2" cx="134.1" cy="5.9" r="1.1"/>
+	<circle class="st2" cx="134.1" cy="204.1" r="1.1"/>
+	<circle class="st2" cx="5.9" cy="204.1" r="1.1"/>
+	<circle class="st2" cx="53.3" cy="187.9" r="1.1"/>
+	<circle class="st2" cx="86.7" cy="187.9" r="1.1"/>
+	<circle class="st2" cx="120.1" cy="187.9" r="1.1"/>
+	<g>
+		<circle class="st2" cx="19.9" cy="63.6" r="1.1"/>
+		<circle class="st2" cx="53.3" cy="63.6" r="1.1"/>
+		<circle class="st2" cx="86.7" cy="63.6" r="1.1"/>
+		<circle class="st2" cx="120.1" cy="63.6" r="1.1"/>
+	</g>
+	<g>
+		<circle class="st2" cx="19.9" cy="146.4" r="1.1"/>
+		<circle class="st2" cx="53.3" cy="146.4" r="1.1"/>
+		<circle class="st2" cx="86.7" cy="146.4" r="1.1"/>
+		<circle class="st2" cx="120.1" cy="146.4" r="1.1"/>
+	</g>
+	<circle class="st2" cx="19.9" cy="187.9" r="1.1"/>
+	<g>
+		<circle class="st2" cx="53.3" cy="22.1" r="1.1"/>
+		<circle class="st2" cx="86.7" cy="22.1" r="1.1"/>
+		<circle class="st2" cx="19.9" cy="22.1" r="1.1"/>
+		<circle class="st2" cx="120.1" cy="22.1" r="1.1"/>
+	</g>
+	<circle class="st2" cx="5.9" cy="105" r="1.1"/>
+	<circle class="st2" cx="134.1" cy="105" r="1.1"/>
+	<g>
+		<circle class="st2" cx="19.9" cy="105" r="1.1"/>
+		<circle class="st2" cx="53.3" cy="105" r="1.1"/>
+		<circle class="st2" cx="86.7" cy="105" r="1.1"/>
+		<circle class="st2" cx="120.1" cy="105" r="1.1"/>
+	</g>
+</g>
+<path class="st2" d="M139.5,0.5v209H0.5V0.5H139.5 M140,0H0v210h140V0L140,0z"/>
+</svg>

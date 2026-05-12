@@ -1,0 +1,7 @@
+{
+  "title": "Hilfe",
+  "startHereText": "Platzieren Sie die erste Platte im Feld A1. Fügen Sie immer Platten im angrenzenden Feld hinzu (rechts - B1 oder oben - A2). Die Platten platzieren Sie durch Ziehen (mit der linken Maustaste) des ausgewählten Designs aus dem Menü unten.",
+"axis": "Durch die individuelle Anpassung der Breite auf der X-Achse und der Höhe auf der Y-Achse könnt ihr den Zuschnitt der Boards genau auf eure Anforderungen abstimmen!",
+  "proceed": "Ja",
+  "cancel": "Nein"
+}

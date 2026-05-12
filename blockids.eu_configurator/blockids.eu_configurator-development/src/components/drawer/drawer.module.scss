@@ -1,0 +1,47 @@
+.root {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    left: 100%;
+    z-index: 5;
+    width: 100%;
+    height: 100vh;
+    transition: all 0.4s ease-in-out;
+
+    &.show {
+        display: flex;
+        right: 0;
+        left: unset;
+        z-index: 99999999;
+        transition: 0.4s;
+        justify-content: flex-end;
+    }
+
+    .content {
+        display: flex;
+        position: relative;
+        z-index: 99999999;
+        width: 578px;
+        padding: 40px;
+        overflow-y: scroll;
+        font-size: 12px;
+        font-weight: 500;
+        color: #000;
+        flex-direction: column;
+        background-color: #FFF;
+        box-shadow: 0 3px 6px #00000029
+    }
+
+    .close {
+        all: unset;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Help",
+  "startHereText": "Place the first board in space A1. Always add boards to the adjacent space (right - B1 or up - A2). To place individual boards, drag and drop (left mouse button) the selected design from the menu below.",
+"axis": "By adjusting the individual width on the X-axis and the height on the Y-axis, you can tailor the cut of the boards exactly to your requirements!",
+  "proceed": "Yes",
+  "cancel": "No"
+}
+

@@ -1,0 +1,120 @@
+@import '../../styles/mixin';
+
+.root {
+    padding-top: 1.625rem;
+    background-color: #ffffff;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    svg {
+        width: 12.75rem;
+        height: 3.75rem;
+    }
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #868686;
+}
+
+.control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.user {
+    all: unset;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 2px;
+
+    svg {
+        font-size: 24px;
+    }
+
+    &:hover {
+        color: #AC348C;
+        text-decoration: underline;
+
+        svg {
+            path {
+                fill: #AC348C;
+            }
+        }
+    }
+
+    &:focus-visible {
+        color: #AC348C;
+        text-decoration: underline;
+
+        svg {
+            path {
+                fill: #AC348C;
+            }
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    & > .button {
+        padding: 8px 14px;
+
+        &.icon {
+            display: flex;
+            position: relative !important;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border-radius: 50%;
+            justify-content: center;
+            align-items: center;
+
+            svg path {
+                fill: #fff;
+            }
+
+            &:hover {
+                svg path {
+                    fill: #000;
+                }
+            }
+        }
+
+        &.logout {
+            margin-right: 12px;
+        }
+
+        &.desktop {
+            display: flex;
+
+            @include devices(desktop) {
+                display: none;
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.tooltip {
+    &:before {
+        right: 0 !important;
+        left: unset !important;
+    }
+}

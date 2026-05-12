@@ -1,0 +1,46 @@
+.root {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.label {
+    font-size: .875rem;
+    color: #292929;
+}
+
+.input {
+    padding: 3px 8px;
+    font-size: .875rem;
+    color: #292929;
+    border: 1px solid #868686;
+    border-radius: 5px;
+}
+
+.error {
+    border-color: #c43636;
+}
+
+.errorMessage {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 100%;
+    font-size: .625rem;
+    color: #c43636;
+    line-height: 1;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.grey {
+    background-color: #EDEDED;
+}
+
+.disabled {
+    .input {
+        background-color: #EDEDED;
+    }
+}

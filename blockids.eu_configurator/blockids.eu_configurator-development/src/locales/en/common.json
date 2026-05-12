@@ -1,0 +1,5 @@
+{
+  "currency": "{{val, currency(currency: 'EUR')}}",
+  "loading": "Loading...",
+  "404": "404 Invalid URL"
+}

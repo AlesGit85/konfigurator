@@ -1,0 +1,10 @@
+{
+  "createNewDraftSuccess": "Neues Design erfolgreich erstellt. Sie werden sofort weitergeleitet...",
+  "createNewDraftError": "Etwas ist schief gelaufen.",
+  "saveDraftSuccess": "Design erfolgreich gespeichert.",
+  "saveDraftError": "Design konnte nicht gespeichert werden.",
+  "confirmDraftSuccess": "Design erfolgreich in den Warenkorb gelegt, Sie werden in Kürze zurück zum Shop umgeleitet...",
+  "confirmDraftError": "Design konnte nicht in den Warenkorb gelegt werden.",
+  "minMaxAllowedWidth": "Die zulässigen Abmessungen für die X-Achse sind {{min}} cm und {{max}} cm",
+  "minMaxAllowedHeight": "Die zulässigen Abmessungen für die Y-Achse sind {{min}} cm und {{max}} cm"
+}

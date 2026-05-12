@@ -1,0 +1,10 @@
+{
+  "createNewDraftSuccess": "Nový návrh úspěšně vytvořen. Hned vás přesměrujeme...",
+  "createNewDraftError": "Něco se nepovedlo.",
+  "saveDraftSuccess": "Návrh byl úspěšně uložen.",
+  "saveDraftError": "Návrh se nepovedlo uložit.",
+  "confirmDraftSuccess": "Návrh byl úspěšně přidán do košíku, za okamžik vás přesměrujeme zpět do obchodu...",
+  "confirmDraftError": "Návrh se nepovedlo přidat do košíku.",
+  "minMaxAllowedWidth": "Povolené rozměry pro osu X jsou {{min}} cm a {{max}} cm",
+  "minMaxAllowedHeight": "Povolené rozměry pro osu Y jsou {{min}} cm a {{max}} cm"
+}

@@ -1,0 +1,37 @@
+@import '../../styles/mixin';
+
+.root {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    background-color: #ededed;
+}
+
+.container {
+    gap: 20px;
+}
+
+.boards {
+    width: 663px;
+    max-width: 663px;
+
+    @include devices(desktop) {
+        width: 1063px;
+        max-width: 1063px;
+    }
+}
+
+.extras {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.rounded {
+    border-radius: 50% !important;
+}
+
+.disabled {
+    pointer-events: none;
+}

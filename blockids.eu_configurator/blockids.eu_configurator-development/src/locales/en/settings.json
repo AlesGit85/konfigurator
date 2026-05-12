@@ -1,0 +1,16 @@
+{
+  "orientation": "Orientation of the boards on the surface",
+  "standardSizes": "Standard dimensions",
+  "individualSizes": "Individual dimension of the wall",
+  "guide": "Instructions",
+  "hints": "Inspiration",
+  "width": "height",
+  "height": "width",
+  "axisX": "axis X",
+  "axisY": "axis Y",
+  "alertTitle": "Warning",
+  "alertDescription": "Do you really want to make a layout change? When you change the layout, the current layout will be deleted.",
+  "undo": "Undo",
+  "redo": "Redo",
+  "tooltipHelp": "Help"
+}

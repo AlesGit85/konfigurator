@@ -1,0 +1,17 @@
+{
+  "orientation": "Ausrichtung der Platten auf der Oberfläche",
+  "standardSizes": "Standardabmessungen",
+  "individualSizes": "Individuelle Wandabmessungen",
+  "guide": "Anleitung",
+  "hints": "Inspiration",
+  "width": "Höhe",
+  "height": "Breite",
+  "axisX": "X-Achse",
+  "axisY": "Y-Achse",
+"alertTitle": "Warnung",
+  "alertDescription": "Möchtet ihr wirklich eine Layoutänderung vornehmen? Bei einer Layoutänderung wird das aktuelle Layout gelöscht.",
+  "undo": "Zurück",
+  "redo": "Wiederholen",
+  "tooltipHelp": "Hilfe"
+
+}
