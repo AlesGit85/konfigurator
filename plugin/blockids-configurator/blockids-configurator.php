@@ -196,10 +196,18 @@ class BLOCKids_Configurator
         );
 
         // Sestavit URL konfiguratoru
-        $configurator_url = get_option('blockids_configurator_url', 'https://configurator.blockids.eu');
-        $locale = substr(get_locale(), 0, 2);
-        if (!in_array($locale, array('cs', 'en', 'de'))) {
-            $locale = 'cs';
+        $configurator_url = get_option('blockids_configurator_url', 'https://konfigurator.blockids.eu');
+
+        // Jazyk: přednostně z GET (předaný z tlačítka), pak WPML, pak get_locale()
+        if (!empty($_GET['lang']) && in_array($_GET['lang'], array('cs', 'en', 'de'))) {
+            $locale = sanitize_key($_GET['lang']);
+        } elseif (defined('ICL_LANGUAGE_CODE') && in_array(ICL_LANGUAGE_CODE, array('cs', 'en', 'de'))) {
+            $locale = ICL_LANGUAGE_CODE;
+        } else {
+            $locale = substr(get_locale(), 0, 2);
+            if (!in_array($locale, array('cs', 'en', 'de'))) {
+                $locale = 'cs';
+            }
         }
 
         $redirect_url = $configurator_url . '/' . $locale . '/sso?t=' . $token;
@@ -221,12 +229,21 @@ class BLOCKids_Configurator
     public function render_configurator_button($atts)
     {
         $atts = shortcode_atts(array(
-            'text' => __('Nakonfigurovat lezeckou stěnu', 'blockids-configurator'),
-            'class' => 'button',
+            'text'       => __('Nakonfigurovat lezeckou stěnu', 'blockids-configurator'),
+            'class'      => 'button',
             'login_text' => __('Přihlásit se pro konfiguraci', 'blockids-configurator'),
         ), $atts);
 
-        $launch_url = add_query_arg('blockids_launch', '1', home_url('/'));
+        // Zjistit aktuální jazyk přes WPML, fallback na get_locale()
+        $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : substr(get_locale(), 0, 2);
+        if (!in_array($lang, array('cs', 'en', 'de'))) {
+            $lang = 'cs';
+        }
+
+        $launch_url = add_query_arg(
+            array('blockids_launch' => '1', 'lang' => $lang),
+            home_url('/')
+        );
 
         if (is_user_logged_in()) {
             return '<a href="' . esc_url($launch_url) . '" class="' . esc_attr($atts['class']) . '">'
@@ -243,7 +260,7 @@ class BLOCKids_Configurator
      */
     public function add_cors_headers()
     {
-        $configurator_url = get_option('blockids_configurator_url', 'https://configurator.blockids.eu');
+        $configurator_url = get_option('blockids_configurator_url', 'https://konfigurator.blockids.eu');
         $configurator_url = rtrim($configurator_url, '/');
 
         add_filter('rest_pre_serve_request', function ($value) use ($configurator_url) {

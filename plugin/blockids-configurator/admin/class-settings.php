@@ -952,7 +952,7 @@ class BLOCKids_Configurator_Settings
             echo '<div class="notice notice-success"><p>' . __('Nastavení uloženo.', 'blockids-configurator') . '</p></div>';
         }
 
-        $configurator_url = get_option('blockids_configurator_url', 'https://configurator.blockids.eu');
+        $configurator_url = get_option('blockids_configurator_url', 'https://konfigurator.blockids.eu');
         $api_base_url     = get_option('blockids_api_base_url', home_url('/wp-json/blockids/v1'));
         $jwt_secret_key   = get_option('blockids_jwt_secret_key');
         $jwt_expiration   = get_option('blockids_jwt_expiration', 3600);
@@ -970,7 +970,7 @@ class BLOCKids_Configurator_Settings
                         <th><label for="configurator_url">URL Konfiguratoru</label></th>
                         <td>
                             <input type="url" id="configurator_url" name="configurator_url" value="<?php echo esc_attr($configurator_url); ?>" class="regular-text">
-                            <p class="description">Např. <code>https://configurator.blockids.eu</code></p>
+                            <p class="description">Např. <code>https://konfigurator.blockids.eu</code></p>
                         </td>
                     </tr>
                     <tr>
